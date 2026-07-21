@@ -9,13 +9,23 @@ class Deck:
     
     def create_deck(self):
         card_color = ["Red", "Blue", "Green", "Yellow"]
+        actions = ["Skip", "Reverse", "Draw Two"]
     
         # Create Zero Cards
         for color in card_color:
             self.cards.append(Card(color, "0"))
 
-        # Create cards 1-9
-        for value in range(1, 10):
-            
+            # Create cards 1-9, two for each color
+            for value in range(1, 10):
+                self.cards.append(Card(color, str(value)))
+                self.cards.append(Card(color, str(value)))
+        
+            # Create two of each action card per color
+            for action in actions:
+                self.cards.append(Card(color, action))
+                self.cards.append(Card(color, action))
+
+
+
 
 
