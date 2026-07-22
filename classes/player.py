@@ -11,3 +11,9 @@ class Player:
     def show_hand(self):
         for card in self.hand:
             print(card)
+
+    def has_won(self):
+        return len(self.hand) == 0
+
+
+    
