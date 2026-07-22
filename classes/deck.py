@@ -40,6 +40,11 @@ class Deck:
             return None
         else:
             return self.cards.pop()
+    
+    # Track remaining cards
+    def track_remaining(self):
+        return len(self.cards)
+    
 
                 
 
