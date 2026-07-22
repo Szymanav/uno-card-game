@@ -7,3 +7,7 @@ class Player:
 
     def remove_card(self, card):
         self.hand.remove(card)
+
+    def show_hand(self):
+        for card in self.hand:
+            print(card)
