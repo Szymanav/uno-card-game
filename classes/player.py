@@ -1,5 +1,6 @@
 class Player:
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
         self.hand = []
 
     def add_card(self, card):
@@ -7,3 +8,10 @@ class Player:
 
     def remove_card(self, card):
         self.hand.remove(card)
+
+    def show_hand(self):
+        for card in self.hand:
+            print(card)
+
+    def has_won(self):
+        return len(self.hand) == 0
