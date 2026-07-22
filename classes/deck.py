@@ -7,7 +7,7 @@ class Deck:
         self.cards = []
         self.create_deck()
 
-        # Shuffle Cards
+        # Shuffle cards
         random.shuffle(self.cards)
     
     def create_deck(self):
@@ -15,7 +15,7 @@ class Deck:
         actions = ["Skip", "Reverse", "Draw Two"]
         wild_cards = ["Regular Wild", "Wild Draw Four"]
     
-        # Create Zero Cards
+        # Create Zero cards
         for color in card_color:
             self.cards.append(Card(color, "0"))
 
@@ -29,10 +29,18 @@ class Deck:
                 self.cards.append(Card(color, action))
                 self.cards.append(Card(color, action))
             
-        # Creates Wild Cards
+        # Create Wild cards
         for wild in wild_cards:
             for wild_copy in range(4):
                 self.cards.append(Card(None, wild))
+
+    # Draw a card from the deck
+    def draw_card(self):
+        if len(self.cards) == 0:
+            return None
+        else:
+            return self.cards.pop()
+
                 
 
 
