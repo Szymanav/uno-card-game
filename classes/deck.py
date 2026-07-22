@@ -1,10 +1,12 @@
 from card import Card
 import random
+
 class Deck:
     # Stores all cards
     def __init__(self):
         self.cards = []
         self.create_deck()
+
         # Shuffle cards
         random.shuffle(self.cards)
     
@@ -16,6 +18,7 @@ class Deck:
         # Create Zero cards
         for color in card_color:
             self.cards.append(Card(color, "0"))
+
             # Create cards 1-9, two for each color
             for value in range(1, 10):
                 self.cards.append(Card(color, str(value)))
@@ -30,6 +33,7 @@ class Deck:
         for wild in wild_cards:
             for wild_copy in range(4):
                 self.cards.append(Card(None, wild))
+
     # Draw a card from the deck
     def draw_card(self):
         if len(self.cards) == 0:
