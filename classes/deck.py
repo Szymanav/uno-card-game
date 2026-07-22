@@ -10,6 +10,7 @@ class Deck:
     def create_deck(self):
         card_color = ["Red", "Blue", "Green", "Yellow"]
         actions = ["Skip", "Reverse", "Draw Two"]
+        wild_cards = ["Regular Wild", "Wild Draw Four"]
     
         # Create Zero Cards
         for color in card_color:
@@ -24,6 +25,12 @@ class Deck:
             for action in actions:
                 self.cards.append(Card(color, action))
                 self.cards.append(Card(color, action))
+            
+            # Creates Wild Cards
+        for wild in wild_cards:
+            for wild_copy in range(4):
+                self.cards.append(Card(None, wild))
+                
 
 
 
