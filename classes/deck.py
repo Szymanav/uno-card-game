@@ -6,6 +6,9 @@ class Deck:
     def __init__(self):
         self.cards = []
         self.create_deck()
+
+        # Shuffle Cards
+        random.shuffle(self.cards)
     
     def create_deck(self):
         card_color = ["Red", "Blue", "Green", "Yellow"]
@@ -26,7 +29,7 @@ class Deck:
                 self.cards.append(Card(color, action))
                 self.cards.append(Card(color, action))
             
-            # Creates Wild Cards
+        # Creates Wild Cards
         for wild in wild_cards:
             for wild_copy in range(4):
                 self.cards.append(Card(None, wild))
