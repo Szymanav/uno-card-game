@@ -1,20 +1,16 @@
 import unittest
+from classes.card import Card
 
 
-class TestStringMethods(unittest.TestCase):
-    
-    def test_upper(self):
-        self.assertEqual("foo".upper(), "FOO")
-        self.assertFalse(True)
+class TestCard(unittest.TestCase):
 
-    def test_isupper(self):
-        self.assertTrue("FOO".isupper())
+    def test_card_creation(self):
+        card = Card("Red", "5")
 
-        self.assertFalse("Foo".isupper())
+        self.assertEqual(card.color, "Red")
+        self.assertEqual(card.value, "5")
 
-    def test_split(self):
-        s = "hello world"
-        self.assertEqual(s.split(), ["hello", "world"])
-        # check that s.split fails when the separator is not a string
-        with self.assertRaises(TypeError):
-            s.split(2)
+    def test_card_string(self):
+        card = Card("Blue", "Skip")
+
+        self.assertEqual(str(card), "Blue Skip")
